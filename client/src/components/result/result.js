@@ -37,6 +37,8 @@ class Result extends Component{
       const add = await instance.methods.ballotOfficialAddress.call().call();
       const voter = await instance.methods.totalVoter.call().call();
       const candidate = await instance.methods.totalCandidate.call().call();
+      const win = await instance.methods.winner.call().call();
+      
 
       this.setState({
         voteStatus: sta,
@@ -48,21 +50,35 @@ class Result extends Component{
         totalVoter: voter,
         totalCandidate: candidate,
         storageValue: 20,
+        winner: win,
+        candidatesInfo: [],
+        winnerObject:[],
       });
       for (let i = 0; i <= this.state.totalCandidate - 1; i++) {
         const data = await this.state.contract.methods
           .candidateAddress(i)
           .call();
+        const dataa = await this.state.contract.methods.candRegister(data).call();
+        
         this.state.candidates.push(data);
+        this.state.candidatesInfo.push(dataa);
       }
    
       this.state.candidates.forEach(async (value) => {
         let votes = await this.state.contract.methods.votesRecieved(value).call();
-        this.state.candidateVotes.push(parseInt("10"));
+        this.state.candidateVotes.push(parseInt(votes));
 
       
       });
-      console.log(this.state.candidateVotes.length);
+ 
+      let winner_var = this.state.winner;
+      console.log(winner_var)
+      var winnerObject_var =  this.state.candidatesInfo.filter(function(obs) {
+         return obs.candAddress == winner_var;
+      });
+      this.state.winnerObject = winnerObject_var;
+      console.log(this.state.candidatesInfo);
+      console.log(this.state.winnerObject[0].citizenship);
     
     } catch (error) {
       console.error(error);
@@ -89,8 +105,15 @@ class Result extends Component{
       display = (
         <div>
           {" "}
-          <button onClick={this.resultDisplay}>click</button>
-          <div style={{height:"400px" , width:"75vw"}}>
+        vote is running
+        </div>
+      );
+      console.log(this.state.candidateVotes);
+    } else {
+      display = (
+        <div>
+          {" "}
+          <div style={{ height: "400px", width: "75vw", float: "left" }}>
             <Pie
               data={{
                 labels: this.state.candidates,
@@ -128,12 +151,15 @@ class Result extends Component{
               }}
             />
           </div>
-        </div>
-      );
-      console.log(this.state.candidateVotes);
-    } else {
-      display = (
-        <div>
+          <div style={{ height: "400px", width: "20vw", float: "right" }}>
+            <div>
+                
+            </div>
+            <div>
+
+            {this.state.winner}
+            </div>
+          </div>
         </div>
       );
     }
@@ -142,7 +168,6 @@ class Result extends Component{
     return (
       <div>
         {display}
-
       </div>
     );
   }

@@ -78,7 +78,7 @@ class CastVote extends Component {
         const data = await contract.methods.candidateAddress(i).call();
         const dataa = await contract.methods.candRegister(data).call();
         candidates.push(dataa);
-        console.log(data);
+        console.log(candidates);
       }
       this.forceUpdate();
 
