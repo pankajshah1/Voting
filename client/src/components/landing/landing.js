@@ -23,33 +23,43 @@ if (localStorage.loginToken) {
 
 function Header() {
   return (
-    <div className={classes.header}>
-      <div className={classes.link}>
-        <Link
-          activeClass="active"
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={800}
-        >
-          Contact Us
-        </Link>
-      </div>
 
-      <div className={classes.link}>
-        <Link
-          activeClass="active"
-          to="buttons"
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={800}
-        >
-          Explore
-        </Link>
+
+    <div className={classes.up_header}>
+      <div className={classes.up_header_content1}>
+        Register
+      </div>
+      <div className={classes.up_header_content2}>
+        Cast Vote
       </div>
     </div>
+    // <div className={classes.header}>
+    //   <div className={classes.link}>
+    //     <Link
+    //       activeClass="active"
+    //       to="contact"
+    //       spy={true}
+    //       smooth={true}
+    //       offset={-70}
+    //       duration={800}
+    //     >
+    //       Contact Us
+    //     </Link>
+    //   </div>
+
+    //   <div className={classes.link}>
+    //     <Link
+    //       activeClass="active"
+    //       to="buttons"
+    //       spy={true}
+    //       smooth={true}
+    //       offset={-70}
+    //       duration={800}
+    //     >
+    //       Explore
+    //     </Link>
+    //   </div>
+    // </div>
   );
 }
 
@@ -107,7 +117,7 @@ const Landing = (props) => {
       <Header />
       <Intro />
       <Buttons props={props} />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };

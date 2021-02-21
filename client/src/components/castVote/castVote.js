@@ -23,8 +23,9 @@ class CastVote extends Component {
   };
 
   componentDidMount = async () => {
+   // this.setState({storageValue:20 , web3});
+    const web3 = await getWeb3();
     try {
-      const web3 = await getWeb3();
       const accounts = await web3.eth.getAccounts();
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = VotingContract.networks[networkId];
@@ -56,6 +57,7 @@ class CastVote extends Component {
         accountAddress: accounts[0],
         totalVoter: voter,
         totalCandidate: candidate,
+        storageValue:20,
       });
     } catch (error) {
       console.error(error);
@@ -65,6 +67,7 @@ class CastVote extends Component {
   runExample = async () => {
     const { accounts, contract, web3, candidates , totalCandidate} = this.state;
     console.log(this.state);
+    this.setState({ storageValue: 50 });
     try {
       // const voter = await contract.methods.totalVoter.call().call();
       // console.log(voter)
@@ -75,8 +78,8 @@ class CastVote extends Component {
         const data = await contract.methods.candidateAddress(i).call();
         const dataa = await contract.methods.candRegister(data).call();
         candidates.push(dataa);
+        console.log(data);
       }
-      console.log(candidates);
       this.forceUpdate();
 
       // for (let i = 1; i <= accountsForVoter.length; i++)

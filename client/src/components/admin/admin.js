@@ -128,7 +128,7 @@ class Admin extends Component {
       );
 
       console.log("move response ", moveResponse);
-      window.location.reload(false);
+      // window.location.reload(false);
 
       //  await contract.methods.startVote().send({ from: accounts[0] });
       //  window.location.reload(false);
@@ -164,7 +164,7 @@ class Admin extends Component {
       );
 
       console.log("move response ", moveResponse);
-      window.location.reload(false);
+      // window.location.reload(false);
 
       //  await contract.methods.startVote().send({ from: accounts[0] });
       //  window.location.reload(false);

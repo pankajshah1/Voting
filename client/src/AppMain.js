@@ -14,6 +14,7 @@ import login from "./components/login/login"
 import castVote from "./components/castVote/castVote"
 import OtpPage from "./components/login/otpPage";
 import { createBrowserHistory } from "history";
+import Result from "./components/result/result";
 
 const history = createBrowserHistory();
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/candidate" component={Candidate} />
           <Route path="/admin" component={Admin} />
           <Route path="/voter" component={voter} />
+          <Route path="/result" component={Result} />
         </Router>
       </Provider>
     );

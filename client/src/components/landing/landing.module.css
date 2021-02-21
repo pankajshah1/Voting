@@ -21,8 +21,8 @@
   height: calc(100vh - 50px);
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  color: rgb(83, 143, 91);
-  background: linear-gradient(to bottom, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  color: rgb(183, 187, 183);
+  background: linear-gradient(to left, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   text-align: center;
   padding-top: 60px;
   font-size: 60px;
@@ -91,3 +91,14 @@ font-size: 30px;
 .cast:hover{
   cursor: pointer;
 }
+
+
+.up_header{
+  height: 50px;
+  background-color: rgb(226, 230, 208);
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
