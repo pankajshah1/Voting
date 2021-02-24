@@ -159,7 +159,7 @@ class Admin extends Component {
       const response = await contract.methods
         .addVoter(candidateAccount, candidateName)
         .send({ from: accounts[0] });
-      console.log("response on adding candidate on blockchain ", response);
+      console.log("response on adding voter on blockchain ", response);
 
       const moveResponse = await axios.post(
         "http://localhost:5000/voting/votermove/",
