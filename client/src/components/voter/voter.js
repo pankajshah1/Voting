@@ -69,7 +69,8 @@ function Voter(props) {
             onChange={example}
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        
+        <button type="submit" class="btn btn-primary" style={{background: "linear-gradient(to right top, #65dfc9, #6cdbeb)"}}>
           Submit
         </button>
       </form>

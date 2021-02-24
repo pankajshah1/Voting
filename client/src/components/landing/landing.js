@@ -21,96 +21,7 @@ if (localStorage.loginToken) {
   }
 }
 
-function Header() {
-  return (
 
-
-    <div className={classes.up_header}>
-      <div className={classes.up_header_content1}>
-        Register
-      </div>
-      <div className={classes.up_header_content2}>
-        Cast Vote
-      </div>
-    </div>
-    // <div className={classes.header}>
-    //   <div className={classes.link}>
-    //     <Link
-    //       activeClass="active"
-    //       to="contact"
-    //       spy={true}
-    //       smooth={true}
-    //       offset={-70}
-    //       duration={800}
-    //     >
-    //       Contact Us
-    //     </Link>
-    //   </div>
-
-    //   <div className={classes.link}>
-    //     <Link
-    //       activeClass="active"
-    //       to="buttons"
-    //       spy={true}
-    //       smooth={true}
-    //       offset={-70}
-    //       duration={800}
-    //     >
-    //       Explore
-    //     </Link>
-    //   </div>
-    // </div>
-  );
-}
-
-function Buttons({ props }) {
-  return (
-    <div className={classes.buttons} id="buttons">
-      <div
-        className={classes.candidate}
-        onClick={() => props.history.push("/candidate")}
-      >
-        Apply <br />
-        for
-        <br /> Candidate
-      </div>
-
-      <div
-        className={classes.voter}
-        onClick={() => props.history.push("/voter")}
-      >
-        Apply <br />
-        for <br />
-        Voter
-      </div>
-      <div
-        className={classes.cast}
-        onClick={() => props.history.push("/login")}
-      >
-        Cast
-        <br /> a<br /> Vote
-      </div>
-    </div>
-  );
-}
-
-function Intro() {
-  return (
-    <div className={classes.intro}>
-      Hi!!! <br />
-      Welcome To <br />
-      Blockchain Enabled Voting Project
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div id="contact" className={classes.contact}>
-      We are developers
-    </div>
-  );
-}
 const Landing = (props) => {
   return (
     <div className={classes.container}>
@@ -145,7 +56,7 @@ const Landing = (props) => {
         <div className={classes.right}>
           <div className={classes.status}>
             <h1>
-              <strong>Your Voice Your Vote</strong>
+              <strong>E-Voting Using Blockchain</strong>
             </h1>
           </div>
           <div className={classes.cards}>
@@ -185,14 +96,3 @@ const Landing = (props) => {
 };
 export default Landing;
 
-
-
-
-
-
-//  <div className={classes.container}>
-//       <Header />
-//       <Intro />
-//       <Buttons props={props} />
-//       {/* <Contact /> */}
-//     </div>

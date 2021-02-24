@@ -10,8 +10,11 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 function Header() {
   return (
-    <div className={classes.header}>
-      <p>Admin Panel</p>
+    <div
+      className={classes.header}
+      style={{ background: "linear-gradient(to right top, #65dfc9, #6cdbeb)" }}
+    >
+      <p style={{ color: "white" }}>Admin Panel</p>
     </div>
   );
 }
@@ -346,7 +349,9 @@ class Admin extends Component {
 
     return (
       <div className={classes.container}>
-        <Header />
+        <Header
+          
+        />
         <div className={classes.options}>
           <div
             id="dashboardOption"

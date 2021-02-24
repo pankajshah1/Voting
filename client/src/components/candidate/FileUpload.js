@@ -76,29 +76,31 @@ const FileUpload = (props) => {
   return (
     <Fragment>
       {message ? <Message msg={message} /> : null}
-        <div className="custom-file mb-4">
-          <input
-            type="file"
-            className="custom-file-input"
-            id="customFile"
+      <div className="custom-file mb-4">
+        <input
+          type="file"
+          className="custom-file-input"
+          id="customFile"
           onChange={onChange}
           required
-          />
-          <label className="custom-file-label" htmlFor="customFile">
-            {filename}
-          </label>
-        </div>
+        />
+        <label className="custom-file-label" htmlFor="customFile">
+          {filename}
+        </label>
+      </div>
 
-      <Progress id="progress" percentage={uploadPercentage} style={display}/>
+      <Progress id="progress" percentage={uploadPercentage} style={display} />
 
       <input
         id="button"
         type="button"
-        
+        style={{
+          background: "linear-gradient(to right top, #65dfc9, #6cdbeb)",
+        }}
         onClick={onSubmit}
-          value="Confirm Image"
-          className="hello btn btn-primary btn-block mt-4"
-        />
+        value="Confirm Image"
+        className="hello btn btn-primary btn-block mt-4"
+      />
       {uploadedFile ? (
         <div className="row mt-5">
           <div className="col-md-6 m-auto">

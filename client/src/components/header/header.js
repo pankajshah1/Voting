@@ -16,6 +16,7 @@ export default function Header({props , children}) {
               className="arrow bi bi-arrow-left-circle"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
+              style={{color:"white"}}
             >
               <path
                 fill-rule="evenodd"

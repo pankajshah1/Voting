@@ -113,7 +113,13 @@ function Candidate(props) {
             <FileUpload name={imageName} />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{
+              background: "linear-gradient(to right top, #65dfc9, #6cdbeb)",
+            }}
+          >
             Submit
           </button>
         </form>

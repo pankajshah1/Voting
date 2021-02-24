@@ -103,14 +103,14 @@ h3 {
 .pro img {
 position: absolute;
   top: -0.05%;
-  right: 10%;
+  right: 4%;
   width: 10rem;
   height: auto;
 }
 .pro h2 {
   width: 40%;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Right */
